@@ -20,7 +20,7 @@ Gestion des utilisateurs
 Gestion des factures
 Ajout de graphiques pour la comptabilité
 
-##💡 Remarques
+## 💡 Remarques
 Assurez-vous de disposer des dernières versions de Python pour une expérience optimale.
 
 ## 🤝 Contribution

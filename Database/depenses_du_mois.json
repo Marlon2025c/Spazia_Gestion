@@ -1,0 +1,30 @@
+[
+    {
+        "date": "",
+        "depenses": "",
+        "type": "",
+        "description": "",
+        "utilisateur": ""
+    },
+    {
+        "date": "2024-07-18",
+        "depenses": "500",
+        "type": "Assurance",
+        "description": "assuranc type",
+        "utilisateur": "Marlon"
+    },
+    {
+        "date": "2024-07-16",
+        "depenses": "800",
+        "type": "sante",
+        "description": "55555",
+        "utilisateur": "Marlon"
+    },
+    {
+        "date": "2022-07-07",
+        "depenses": "900",
+        "type": "dette",
+        "description": "super dette",
+        "utilisateur": "Marlon"
+    }
+]

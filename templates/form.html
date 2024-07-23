@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .form-container {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="{{ url_for('gestion_compte') }}" method="POST">
+      <select name="selectype" id="selectypeform" onchange="véricationselectype()">
+        <option value="0">autre</option>
+        <option value="1">Dépense</option>
+        <option value="2">Entrées</option>
+      </select>
+
+      <div id="depense-form" class="form-container">
+        <h2>Formulaire de Dépense</h2>
+        <label for="depense_date">Date</label>
+        <input type="date" name="depense_date" />
+        <br />
+        <label for="depense-amount">Montant:</label>
+        <input type="number" id="depense-amount" name="depense_amount" />
+        <br />
+        <label for="depense_type">Type</label>
+        <label for="">Pour l'option Achat en ligne <br />To good to go, Amazone, aliexpress, ventement en ligne</label>
+        <select name="depense_type" id="depense_type_select">
+          <option value="frais_bancaire">Frais bancaire</option>
+          <option value="dette">Dette</option>
+          <option value="eletricite">Electricite</option>
+          <option value="Assurance">Assurance</option>
+          <option value="sante">Santé</option>
+          <option value="eau">Eau</option>
+          <option value="internet_telephonie">Internet / Téléphonie</option>
+          <option value="logement">Logement</option>
+          <option value="supermarche">Supermarché</option>
+          <option value="restaurants">Restaurants</option>
+          <option value="animaux">Animaux</option>
+          <option value="carburant">Carburant</option>
+          <option value="marie_sarah">Marie-Sarah</option>
+          <option value="achat_en_ligne">Achat en Ligne</option>
+          <option value="divers">Divers</option>
+        </select>
+        <br />
+        <label for="depense-description">Description:</label>
+        <input type="text" id="depense-description" name="depense_description" />
+        <br />
+      </div>
+
+      <div id="entrees-form" class="form-container">
+        <h2>Formulaire d'Entrées</h2>
+        <label for="entrees_date">Date</label>
+        <input type="date" name="entrees_date" />
+        <br />
+        <label for="entrees-amount">Montant:</label>
+        <input type="number" id="entrees-amount" name="entrees_amount" />
+        <br />
+        <label for="entrees_type">Type</label>
+        <select name="entrees_type" id="entrees_type_select">
+          <option value="salaire">Salaire</option>
+          <option value="remboursement">Remboursement</option>
+          <option value="virement">Virement</option>
+          <option value="cadeaux">Cadeaux</option>
+        </select>
+        <br />
+        <label for="entrees-description">Description:</label>
+        <input type="text" id="entrees-description" name="entrees_description" />
+        <br />
+      </div>
+      <button type="submit">Soumettre</button>
+    </form>
+
+    <script>
+      function véricationselectype() {
+        var selectypejs = document.getElementById("selectypeform").value;
+        var depenseForm = document.getElementById("depense-form");
+        var entreesForm = document.getElementById("entrees-form");
+
+        if (selectypejs == "1") {
+          depenseForm.style.display = "block";
+          entreesForm.style.display = "none";
+        } else if (selectypejs == "2") {
+          depenseForm.style.display = "none";
+          entreesForm.style.display = "block";
+        } else {
+          depenseForm.style.display = "none";
+          entreesForm.style.display = "none";
+        }
+      }
+
+      // Appel initial pour afficher le formulaire correct lors du chargement de la page
+      véricationselectype();
+    </script>
+  </body>
+</html>
